@@ -1,0 +1,58 @@
+$primaryColor:#006747;
+.credNotification{
+    position: absolute;
+    text-align: center;
+    top: -20px;
+    >span{
+        background-color: $primaryColor;
+        padding: 9px 8px 9px 78px;
+        color: #fafafa;
+        font-size: 1.2rem;
+        border-radius: 8px;
+        > button {
+            padding-left: 92px;
+            > mat-icon{
+                color: #fafafa;
+            }
+        }
+    }
+}
+.login{
+    width: 100%;
+    height: calc(100% - 10%);
+    padding-left: 20%;
+}
+.logoText{
+    position: relative;
+    padding: 40px 20px 0px 80px;
+    
+    a{
+        font-size: 2rem;
+        color: #006747;
+        text-decoration: none;
+
+        img.imgLogo{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+.loginForm{
+    width: 360px;
+    padding-top: 32px;
+    font-size: 1rem;
+
+    button.btn-success{
+        &:hover{
+            background-color: #fafafa;
+            color: $primaryColor;
+        }
+    }
+    a{
+        font-size: 14px;
+        color: $primaryColor;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}

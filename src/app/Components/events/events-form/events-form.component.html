@@ -1,0 +1,83 @@
+<h1 mat-dialog-title>Create an event:</h1>
+<div mat-dialog-content>
+  <form [formGroup]="eventForm">
+    <!-- angular material -->
+    <mat-form-field class="matInputWidth">
+      <mat-label>Event name</mat-label>
+      <input id="eventName" formControlName="eventName" matInput />
+    </mat-form-field>
+    <mat-form-field class="matInputWidth">
+      <mat-label>Event Description</mat-label>
+      <input
+        id="eventDescription"
+        formControlName="eventDescription"
+        matInput
+      />
+    </mat-form-field>
+    <div class="matInputWidth">
+      <p> Event Type</p>
+      <mat-radio-group formControlName="eventType">
+        <mat-radio-button  value="Private">Private</mat-radio-button>
+        <mat-radio-button value="Public">Public</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <mat-form-field class="matInputWidth">
+      <mat-label>Swipe Type</mat-label>
+      <mat-select matNativeControl required formControlName="eventSwipeType">
+        <mat-option value="notRequired">Not Required</mat-option>
+        <mat-option value="in">In</mat-option>
+        <mat-option value="in/Out">In/Out </mat-option>
+        <mat-option value="multiple">Multiple</mat-option>
+       
+      </mat-select>
+    </mat-form-field>
+      <mat-form-field appearance="fill" class="matInputWidth">    
+        <mat-label>Choose a Start date</mat-label>
+        <input matInput [matDatepicker]="picker" [min]="yesterday"  id="startDate" formControlName="startDate">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="matInputWidth">
+        <mat-label>Choose an end date</mat-label>
+        <input matInput [matDatepicker]="picker1"   id="endDate" formControlName="endDate">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+    <div class="matInputWidth">
+      <label>Event Time</label>
+      <p class="p-3">
+        <input type="time" id="eventTime" formControlName="eventTime" name="eventTime" required class="eventTime">
+      </p>
+    </div>
+    <mat-form-field class="matInputWidth">
+      <mat-label>Buffer Time</mat-label>
+      <mat-select matNativeControl required formControlName="eventBufferTime">
+        <mat-option value="0">0</mat-option>
+        <mat-option value="5">5</mat-option>
+        <mat-option value="5">10</mat-option>
+        <mat-option value="15">15 </mat-option>
+       
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="matInputWidth">
+      <mat-label>Event Location</mat-label>
+      <input id="eventLocation" formControlName="eventLocation" matInput/>
+    </mat-form-field>
+    <mat-form-field class="matInputWidth">
+      <mat-label>Event Created By</mat-label>
+      <input class="disabled"  formControlName="createdBy"  matInput [value]="userName"/>
+    </mat-form-field>
+    <!-- angular material  -->
+    <div>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onReset()">Reset</button>
+  <button mat-button (click)="onNoClick()" cdkFocusInitial>Submit</button>
+  <button mat-button (click)="openDialog()">Add attendees</button>
+
+  
+</div>

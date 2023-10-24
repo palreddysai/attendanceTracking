@@ -1,0 +1,26 @@
+@import '../../../styles.scss';
+.myEvents{
+    margin-top: 20px;
+    
+}
+h4{
+    font-weight: 500;
+    color: #006747;
+    font-size: 1.6rem;
+}
+.eventCard{
+        height: 356px;
+        margin-bottom: 16px;
+    & mat-card-title{
+        color: #006747;
+    }
+}
+.row{
+    margin-right: 0px !important;
+}
+.bordeBottom{
+    border-bottom: $primaryColor 1px solid;
+}
+.componentsTitle{
+    border: none;
+}

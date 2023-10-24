@@ -1,0 +1,24 @@
+@import '../../../styles.scss';
+.header{
+    height: 14vh;
+
+}
+.logoText{
+    
+    a{
+        font-size: 28px;
+        color: #006747;
+        text-decoration: none;
+    }
+}
+img{
+    height: 60px;
+}
+.logOut{
+    background-color: #ffff;
+    color: $primaryColor;
+    border: none;
+    text-decoration: none;
+    font-size: 1.4rem;
+    padding-right: 6px;
+}

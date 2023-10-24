@@ -1,0 +1,94 @@
+<div class="myEvents">
+  <div class="row justify-content-around">
+    <div class="col-6 bordeBottom">
+      <h2 class="componentsTitle">Manage My Events</h2>
+    </div>
+    <div class="col-6 text-end bordeBottom">
+      <div class="btn btn-info" (click)="openDialog()">Create an Event</div>
+    </div>
+  </div>
+  <mat-tab-group>    
+      <mat-tab label="Public Events">
+        <div class="matTabContent py-3 ">
+          <div class="row" *ngFor="let user of currentUser">
+          <div class="col-3" *ngFor="let e of publicEvents; let i = index;">
+            <mat-card class="eventCard" *ngIf="e.createdBy == user.firstName && e.eventType == 'Public'">
+              <mat-card-header>
+                <mat-card-title>{{ e.eventName }}</mat-card-title>
+                <mat-card-subtitle><mat-icon #tooltip="matTooltip"
+                  matTooltip="location"> person_pin_circle</mat-icon> {{ e.eventLocation }}</mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content>
+                <p>
+                  <mat-icon #tooltip="matTooltip" matTooltip="description">description</mat-icon> {{e.eventDescription}}
+                </p>
+                <p>
+                  <mat-icon #tooltip="matTooltip"
+                    matTooltip="from date">date_range</mat-icon> {{e.startDate | date:'MM-dd-yyyy'}} <span class="fw-bold">to</span>  
+                    <mat-icon #tooltip="matTooltip"
+                    matTooltip="to date">date_range</mat-icon> {{e.endDate | date:'MM-dd-yyyy'}}
+                </p>
+                <p>
+                  <mat-icon #tooltip="matTooltip" matTooltip="time">update</mat-icon>{{e.eventTime}} <span *ngIf="e.eventTime > 12">PM</span><span *ngIf="e.eventTime < 12">AM</span>
+                </p>
+                <p>
+                  <mat-icon>av_timer</mat-icon>{{e.eventBufferTime}} <span>Mins</span>
+                </p>
+                <p><mat-icon> transfer_within_a_station</mat-icon> {{e.eventType}}</p>
+                <p>
+                  <mat-icon>person</mat-icon>{{ e.createdBy | titlecase }}
+                </p>               
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-button (click)="editOpenDialog(e)">Edit Event</button>
+                <button mat-button (click)="deletePublicEvent(i)">Delete Event</button>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+        </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Private Events">
+        <div class="matTabContent py-3">
+        <div class="row" *ngFor="let user of currentUser">
+        <div class="col-3" *ngFor="let e of privateEvents; let i = index" >
+          <mat-card
+            class="eventCard"
+            *ngIf="e.createdBy == user.firstName && e.eventType == 'Private'"
+          >
+            <mat-card-header>
+              <mat-card-title>{{ e.eventName }}</mat-card-title>
+              <mat-card-subtitle>
+                <mat-icon #tooltip="matTooltip"
+                matTooltip="location"> person_pin_circle</mat-icon> {{ e.eventLocation }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <p>
+                <mat-icon #tooltip="matTooltip" matTooltip="description">description</mat-icon> {{e.eventDescription}}
+              </p>
+              <p >
+                <mat-icon #tooltip="matTooltip"
+                  matTooltip="from date">date_range</mat-icon> {{e.startDate | date:'MM-dd-yyyy'}} <span class="fw-bold ">to</span>  
+                  <mat-icon #tooltip="matTooltip"
+                  matTooltip="to date">date_range</mat-icon> {{e.endDate | date:"MM-dd-yyyy"}}
+              </p>
+              
+              <p>
+                <mat-icon #tooltip="matTooltip" matTooltip="time">update</mat-icon>{{e.eventTime}}
+              </p>
+              <p><mat-icon> transfer_within_a_station</mat-icon> {{e.eventType}}</p>
+              <p>
+                <mat-icon>person</mat-icon>{{ e.createdBy | titlecase }}
+              </p>
+             
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button >Edit Event</button>
+              <button mat-button (click)="deletePrivateEvent(i)">Delete Event</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+      </div></mat-tab>
+  </mat-tab-group>
+</div>

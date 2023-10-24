@@ -1,0 +1,13 @@
+@import '../../../styles.scss';
+.allEvents{
+    margin-top: 20px;
+}
+mat-card-title{
+    color: #006747;
+    & .eventCard{
+        box-shadow: 2px 2px 2px #ffff;
+    }
+}
+.eventCard{
+    height: 356px;
+}

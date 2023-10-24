@@ -1,0 +1,24 @@
+<div class="container-fluid pt-3">
+    <h2 class="componentsTitle">View Profile</h2>
+    <div class="profile" *ngFor="let user of currentUser">
+        <div class="proPic">
+            <img [src]='user.imageLink' alt="Profile Picture" class="img-fluid">
+        </div>
+        <h2 class="prifileTitle ">{{user.firstName}} {{user.lastName}}</h2>
+        <p>
+            <span class="fw-bold">About: </span>{{user.about}}
+        </p>
+        <p class="profileEmail"><span class="fw-bold">Email:</span>  {{user.email}}</p>
+        <div class="address">
+            <p class="addressStreet"><span class="fw-bold"> Address:</span> {{user.address.street}}</p>
+            <p class="addressFull">
+                {{user.address.city}}, {{user.address.state}}-{{user.address.code}} <br><br>{{user.address.country}}
+            </p>
+            <p class="role">
+                <span class="fw-bold">Role: </span>{{user.role}}
+            </p>
+
+        </div>
+
+    </div>
+</div>

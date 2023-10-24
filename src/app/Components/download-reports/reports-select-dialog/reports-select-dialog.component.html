@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="container p-4">
+        <section class="example-section" [formGroup]="toppings">
+            <h4>Select required fields:</h4>
+            <p><mat-checkbox formControlName="sid" [disabled]="disabled">#SID</mat-checkbox></p>
+            <p><mat-checkbox formControlName="n19">919</mat-checkbox></p>
+            <p><mat-checkbox formControlName="firstName">First Name</mat-checkbox></p>
+            <p><mat-checkbox formControlName="lastName">Last Name</mat-checkbox></p>
+            <p><mat-checkbox formControlName="email">Email</mat-checkbox></p>
+            <p><mat-checkbox formControlName="clockIn">Clock In</mat-checkbox></p>
+            <p><mat-checkbox formControlName="clockOut">Clock Out</mat-checkbox></p>
+
+          </section>
+          
+          <section class="example-section" [formGroup]="toppings">
+            <h4>You chose:</h4>
+            {{toppings.value | json}}
+          </section>
+    </div>
+</div>
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+  </mat-dialog-actions>
+  
+
+  

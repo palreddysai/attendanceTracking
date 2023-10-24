@@ -1,0 +1,27 @@
+<div class="container-fluid pt-3">
+    <h2 class="componentsTitle">Check Attendees</h2>
+        <div class="allEvents">
+            <div class="row">
+                <div class="col-3 pb-3" *ngFor="let e of privateEvents">
+                    <mat-card class="eventCard" *ngIf="e.createdBy == userName">
+                        <mat-card-header>
+                          <mat-card-title>{{e.eventName | titlecase}}</mat-card-title>
+                          <mat-card-subtitle><mat-icon #tooltip="matTooltip"
+                            matTooltip="location"> location_on</mat-icon> {{e.eventLocation}}</mat-card-subtitle>
+                        </mat-card-header>
+                        <mat-card-content>
+                          <p class="py-2"><mat-icon #tooltip="matTooltip"
+                            matTooltip="description">description</mat-icon> {{e.eventDescription}}</p>
+                          <p><mat-icon #tooltip="matTooltip"
+                            matTooltip="description">date_range</mat-icon> {{e.startDate | date:'MM-dd-yyy'}}</p>
+                            <p><mat-icon>person</mat-icon> {{e.eventType}}</p>
+                            <!-- <p>{{e.createdBy}}</p> -->
+                        </mat-card-content>
+                        <mat-card-actions>
+                          <button mat-button (click)="openDialog()">View Attendees</button>
+                        </mat-card-actions>
+                      </mat-card>
+                </div>
+            </div>
+        </div>
+</div>

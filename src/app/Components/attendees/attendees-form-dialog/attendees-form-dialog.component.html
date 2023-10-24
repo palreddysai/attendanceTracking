@@ -1,0 +1,47 @@
+<div class="basic-container">
+<form>
+    <mat-form-field>
+        <mat-label for="id">ID</mat-label>
+      <input matInput placeholder="ID" name="id" id="id" [(ngModel)]="data.no">
+    </mat-form-field>
+
+    <mat-form-field>
+        <label for="n19">919</label>
+        <input matInput placeholder="919" name="n19" id="n19" [(ngModel)]="data.n19"> 
+      </mat-form-field>
+      <mat-form-field>
+        <label for="sid">SID</label>
+        <input matInput placeholder="sid" name="sid" id="sid" [(ngModel)]="data.sid">
+      </mat-form-field>
+      <mat-form-field>
+        <label for="firstName">First Name</label>
+        <input matInput placeholder="firstName" name="firstName" id="firstName" [(ngModel)]="data.firstName">
+      </mat-form-field>
+      <mat-form-field>
+        <label for="lastName">Last Name</label>
+        <input matInput placeholder="lastName" name="lastName" id="lastName" [(ngModel)]="data.lastName">
+      </mat-form-field>
+      <mat-form-field>
+        <label for="email">Email</label>
+        <input matInput placeholder="email" name="email" id="email" [(ngModel)]="data.email">
+      </mat-form-field>
+      <mat-form-field>
+        <label for="clockIn">Clock In</label>
+        <input matInput placeholder="clockIn" name="clockIn" id="clockIn" [(ngModel)]="data.clockIn">
+      </mat-form-field>
+      <mat-form-field>
+        <label for="clockOut">Clock Out</label>
+        <input matInput placeholder="clockOut" name="clockOut" id="clockOut" [(ngModel)]="data.clockOut">
+      </mat-form-field>
+<!--     
+    <mat-form-field>
+      <input matInput placeholder="Weight" [(ngModel)]="data.weight">
+    </mat-form-field>
+    
+    <mat-form-field>
+      <input matInput placeholder="Symbol" [(ngModel)]="data.symbol">
+    </mat-form-field>
+     -->
+    <button mat-button (click)="closeDialog()">Close</button>
+</form>
+    </div>

@@ -1,0 +1,10 @@
+ [
+    {"email":"sai@nwmissouri.edu", "password":"sai@123$", "firstName":"Sai Kumar", "lastName": "Palreddy",
+    "about":"Masters Computer & Information Sciences Student at NWMSU", "role":"Supervisor","imageLink":"../../../assets/images/avatar.png",
+    "address":{
+        "street":"515 E 7th St", "city":"Maryville", "state":"MO","code":64468,"country":"USA"
+    }
+
+}
+
+]

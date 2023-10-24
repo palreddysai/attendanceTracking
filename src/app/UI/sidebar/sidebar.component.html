@@ -1,0 +1,17 @@
+<main class="sidenav">
+    <mat-drawer-container class="drawerContainer">
+      <mat-drawer mode="side" opened>
+        <div>
+          <ul class="nav flex-column">
+            <li class="nav-item" *ngFor="let navItems of navList"> <a href="#" routerLink={{navItems.routerLink}} routerLinkActive="active" class="nav-link">{{navItems.navBarItem}}</a>
+            </li>
+          </ul>
+        </div>
+      </mat-drawer>
+      <mat-drawer-content>
+          <div class="container-fluid">
+              <router-outlet> </router-outlet>
+          </div>
+      </mat-drawer-content>
+    </mat-drawer-container>
+  </main>

@@ -1,0 +1,28 @@
+<div class="allEvents">
+  <h2 class="componentsTitle">Dashboard View</h2>
+    <div class="row">
+        <div class="col-3 pb-3" *ngFor="let e of events">
+            <mat-card class="eventCard">
+                <mat-card-header>
+                  <mat-card-title>{{e.eventName | titlecase}}</mat-card-title>
+                  <mat-card-subtitle><mat-icon #tooltip="matTooltip"
+                    matTooltip="location"> person_pin_circle</mat-icon> {{e.eventLocation}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                  <p class="py-2"><mat-icon #tooltip="matTooltip"
+                    matTooltip="description">description</mat-icon> {{e.eventDescription}}</p>
+                  <p>
+                    <mat-icon #tooltip="matTooltip" matTooltip="date">date_range</mat-icon> <span class="pb-5"> {{e.startDate | date:'MM-dd-yyyy'}} </span>
+                  </p>
+                  <p>
+                    <mat-icon #tooltip="matTooltip" matTooltip="time">update</mat-icon> <span class="pb-5"> {{e.endDate | date:'h:mm a'}} </span>
+                  </p>
+                    <p><mat-icon #tooltip="matTooltip" matTooltip="Type of event">person</mat-icon> {{e.eventType}}</p>
+                    <!-- <p>{{e.createdBy}}</p> -->
+                </mat-card-content>
+                <mat-card-actions>
+                </mat-card-actions>
+              </mat-card>
+        </div>
+    </div>
+</div>

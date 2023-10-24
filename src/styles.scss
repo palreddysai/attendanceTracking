@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+$primaryColor: #006747;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.componentsTitle{
+    color: $primaryColor;
+    font-size: 1.6rem;
+    border-bottom: $primaryColor 1px solid;
+}
+
+mat-card-title{
+    color: $primaryColor;
+}
+.mat-icon{
+    height: 17px;
+    width: 20px;
+    font-size: 18px;
+}
